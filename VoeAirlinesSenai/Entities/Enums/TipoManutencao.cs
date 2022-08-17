@@ -1,6 +1,8 @@
 namespace VoeAirlinesSenai.Entities.Enums;
-public enum TipoManutencao{
+public enum TipoManutencao
+{
 
-Preventiva,
-Corretiva
+    Preventiva,
+    Corretiva
 }
+
