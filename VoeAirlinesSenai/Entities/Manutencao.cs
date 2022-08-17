@@ -16,7 +16,7 @@ public class Manutencao
     public DateTime DataHora { get; set; }
     public string? Observacoes { get; set; }
 
-    public TipoManutencao Tipo { get; set; }
+    public TipoManutencao Tipo { get; set; } //struct do tipo - TipoManutenção  que conecta com a "//Enum\\".
 
     public int AeronaveId { get; set; }
 
