@@ -6,7 +6,7 @@ namespace VoeAirlinesSenai.Entities;
 // Objeto é uma instacia de uma classe
 public class Aeronave
 {
-    public Aeronave(string fabricante, int modelo, int codigo)
+    public Aeronave(string fabricante, string modelo, string codigo)
     {
         Fabricante = fabricante;
         Modelo = modelo;
@@ -24,8 +24,8 @@ public class Aeronave
 
     public int Id { get; set; }
     public string Fabricante { get; set; }
-    public int Modelo { get; set; }
-    public int Codigo { get; set; }
+    public string Modelo { get; set; }
+    public string Codigo { get; set; }
     public ICollection<Manutencao> Manutencoes { get; set; } = null!;
     public ICollection<Voo> Voos { get; set; } = null!;
 
