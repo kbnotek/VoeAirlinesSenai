@@ -5,7 +5,8 @@ using VoeAirlinesSenai.ViewModels;
 //Definição do namespace
 namespace VoeAirlinesSenai.Services;
 //classe de serviço - Trabalhar com funcionalidade do sistema ! ( CRUD DE INSERT DA AERONAVE )
-public class AeronaveService{   
+public class AeronaveService
+{
     //RF - REQYUSUTI FUNCIONAL
     //RF - NÃO FUNCIONAIS
     //NESSE MOMENTO VOCÊ VAI TRABALAHAR COM REQUISITO FUNCIONAIS.
@@ -43,7 +44,7 @@ public class AeronaveService{
         //EntityFramework Core - ORM
         _context.Add(aeronave);
         _context.SaveChanges();
-        
+
         return new DetalhesAeronaveViewModel
         (
             aeronave.Id,
