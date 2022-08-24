@@ -1,4 +1,4 @@
-namespace DetalhesManutencaoViewModel.Manutencao.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class DetalhesManutencaoViewModel
 {
     

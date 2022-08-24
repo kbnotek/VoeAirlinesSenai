@@ -1,4 +1,4 @@
-namespace DetalhesCancelamentoViewModel.Cancelamento.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class DetalhesCancelamentoViewModel
 {
     public DetalhesCancelamentoViewModel(int id, string motivo, DateTime dataHoraNotificacao, int vooId)

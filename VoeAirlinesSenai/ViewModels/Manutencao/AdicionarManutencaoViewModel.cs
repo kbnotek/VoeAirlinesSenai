@@ -1,4 +1,4 @@
-namespace AdicionarManutencaoviewModel.Manutencao.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarManutencaoviewModel
 {
     

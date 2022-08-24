@@ -1,4 +1,4 @@
-namespace AdicionarVooViewModel.Voos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarVooViewModel
 {
     public AdicionarVooViewModel(string origem, string destino, DateTime dataHoraPartida, DateTime dataHoraChegada, int aeronaveId, int pilotoId)

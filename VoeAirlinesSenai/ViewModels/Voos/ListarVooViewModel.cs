@@ -1,4 +1,4 @@
-namespace ListarVooViewModel.Voos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class ListarVooViewModel
 {
     public ListarVooViewModel(int id, string origem, string destino, DateTime dataHoraPartida, DateTime dataHoraChegada)

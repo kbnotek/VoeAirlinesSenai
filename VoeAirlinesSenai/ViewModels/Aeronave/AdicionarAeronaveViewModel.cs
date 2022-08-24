@@ -1,4 +1,4 @@
-namespace AdicionarAeronaveViewModel.Aeronave.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarAeronaveViewModel
 {
     public AdicionarAeronaveViewModel(string fabricante, string modelo, string codigo)

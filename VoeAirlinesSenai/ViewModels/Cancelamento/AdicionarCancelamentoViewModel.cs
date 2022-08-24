@@ -1,6 +1,6 @@
 using VoeAirlinesSenai.Entities.Enums;
 
-namespace AdicionarCancelamentoViewModel.Cancelamento.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarCancelamentoViewModel
 {
     public AdicionarCancelamentoViewModel(DateTime dataHora, string? observacoes, TipoManutencao tipo, int aeronaveId)

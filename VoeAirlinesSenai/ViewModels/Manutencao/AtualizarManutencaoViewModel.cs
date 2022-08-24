@@ -1,4 +1,4 @@
-namespace AtualizarManutencaoViewModel.Manutencao.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AtualizarManutencaoViewModel
 {
     

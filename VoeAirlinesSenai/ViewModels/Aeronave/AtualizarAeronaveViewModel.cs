@@ -1,4 +1,4 @@
-namespace AtualizarAeronaveViewModel.Aeronave.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AtualizarAeronaveViewModel
 {
     public AtualizarAeronaveViewModel(int id, string fabricante, string modelo, string codigo)

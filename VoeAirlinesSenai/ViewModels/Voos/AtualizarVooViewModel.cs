@@ -1,4 +1,4 @@
-namespace AtualizarVooViewModel.Voos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AtualizarVooViewModel
 {
     public AtualizarVooViewModel(int id, string origem, string destino, DateTime dataHoraPartida, DateTime dataHoraChegada, int aeronaveId, int pilotoId)

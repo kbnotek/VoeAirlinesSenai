@@ -1,4 +1,4 @@
-namespace AtualizarPilotoViewModel.Pilotos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AtualizarPilotoViewModel
 {
     public AtualizarPilotoViewModel(int id, string nome, string matricula)

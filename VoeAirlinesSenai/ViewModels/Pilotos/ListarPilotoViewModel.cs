@@ -1,4 +1,4 @@
-namespace ListarPilotoViewModel.Pilotos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class ListarPilotoViewModel
 {
     public ListarPilotoViewModel(int id, string nome)

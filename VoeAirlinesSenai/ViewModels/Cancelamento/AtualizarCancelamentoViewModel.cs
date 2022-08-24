@@ -1,4 +1,4 @@
-namespace AtualizarCancelamentoViewModel.Cancelamento.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AtualizarCancelamentoViewModel
 {
     public AtualizarCancelamentoViewModel(int id, string motivo, DateTime dataHoraNotificacao, int vooId)

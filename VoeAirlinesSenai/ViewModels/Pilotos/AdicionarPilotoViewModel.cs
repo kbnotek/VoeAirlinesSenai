@@ -1,4 +1,4 @@
-namespace AdicionarPilotoViewModel.Pilotos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarPilotoViewModel
 {
     public AdicionarPilotoViewModel(string nome, string matricula)

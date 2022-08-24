@@ -1,4 +1,4 @@
-namespace DetalhesPilotoViewModel.Pilotos.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class DetalhesPilotoViewModel
 {
     public DetalhesPilotoViewModel(int id, string nome, string matricula)

@@ -1,4 +1,4 @@
-namespace DetalhesAeronaveViewModel.Aeronave.ViewModels;
+namespace VoeAirlinesSenai.ViewModels;
 public class DetalhesAeronaveViewModel
 {
     public DetalhesAeronaveViewModel(int id, string fabricante, string modelo, string codigo)
