@@ -54,4 +54,39 @@ public class AeronaveService
         );
 
     }
+    //LISTAR AERONAVES
+    public IEnumerable<ListarAeronvaveViewModel> ListarAeronaves()
+    {
+        return _context.Aeronaves.Select(a=>new ListarAeronvaveViewModel(a.Id,a.Modelo,a.Codigo));
+    }
+    // Buscar pelo ID AERONAVES
+    public DetalhesAeronaveViewModel? ListarAeronavePeloId(int id)
+    {
+        var aeronave = _context.Aeronaves.Find(id);
+        if(aeronave !=null){
+            return new DetalhesAeronaveViewModel(
+                aeronave.Id,
+                aeronave.Fabricante,
+                aeronave.Modelo,
+                aeronave.Codigo
+            );
+            
+        }
+        return  null;
+    }
+// Atualizar Aeronave
+    public DetalhesAeronaveViewModel? AtualizarAeronave(AtualizarAeronaveViewModel dados)
+    {
+        return null;
+    }
+    //Deletar AERONAVE !
+    public void Excluir(int id)
+    {
+        var aeronave = _context.Aeronaves.Find(id);
+        if (aeronave!= null){
+            _context.Remove(aeronave);
+            _context.SaveChanges();
+        }
+    }
+
 }
