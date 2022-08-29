@@ -8,6 +8,7 @@ public class Cancelamento
         DataHoraNotificacao = dataHoraNotificacao;
         VooId = vooId;
     }
+
     public int Id { get; set; }
     public string Motivo { get; set; }
     public DateTime DataHoraNotificacao { get; set; }

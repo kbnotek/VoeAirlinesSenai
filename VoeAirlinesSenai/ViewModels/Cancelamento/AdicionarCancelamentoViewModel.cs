@@ -3,15 +3,17 @@ using VoeAirlinesSenai.Entities.Enums;
 namespace VoeAirlinesSenai.ViewModels;
 public class AdicionarCancelamentoViewModel
 {
-    public AdicionarCancelamentoViewModel(DateTime dataHora, string? observacoes, TipoManutencao tipo, int aeronaveId)
+    public AdicionarCancelamentoViewModel(int id, string motivo, DateTime dataHoraNotificacao, int vooId)
     {
-        DataHora = dataHora;
-        Observacoes = observacoes;
-        Tipo = tipo;
-        AeronaveId = aeronaveId;
+        Id = id;
+        Motivo = motivo;
+        DataHoraNotificacao = dataHoraNotificacao;
+        VooId = vooId;
     }
-    public DateTime DataHora { get; set; }
-    public string? Observacoes { get; set; }
-    public TipoManutencao Tipo { get; set; }
-    public int AeronaveId { get; set; }
+
+    public int Id { get; set; }
+    public string Motivo { get; set; }
+    public DateTime DataHoraNotificacao { get; set; }
+    public int VooId { get; set; }
+
 }
