@@ -53,7 +53,7 @@ public class VooController : ControllerBase
         _vooService.ExcluirVoo(id);
         return NoContent();
     }
-    // Ferar Ficar em PDF
+    // Gerar Ficar em PDF
     [HttpGet("ficha/{id}")]
     public IActionResult GerarFichaDoVoo(int id)
     {
