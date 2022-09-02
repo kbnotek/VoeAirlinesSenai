@@ -21,6 +21,7 @@ builder.Services.AddTransient<CancelamentoService>();
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 var app = builder.Build();
+//app.Environment.ContentRootPath
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

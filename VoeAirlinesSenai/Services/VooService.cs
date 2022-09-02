@@ -6,16 +6,20 @@ using VoeAirlinesSenai.Contexts;
 using VoeAirlinesSenai.Entities;
 using VoeAirlinesSenai.ViewModels;
 
+
 namespace VoeAirlinesSenai.Services;
 public class VooService
 {
     private readonly VoeAirlinesContext _context;
     private readonly IConverter _converter;
+    //IhostEnvironmet -- Interface para usar para imagens !
+    private readonly IHostEnvironment _hostEnvironment;
 
-    public VooService(VoeAirlinesContext context, IConverter converter)
+    public VooService(VoeAirlinesContext context, IConverter converter, IHostEnvironment hostEnvironment)
     {
         _context = context;
         _converter = converter;
+        this._hostEnvironment = hostEnvironment;
     }
     //Adicionar Voo
     public DetalhesVooViewModel AdicionarVoo(AdicionarVooViewModel dados)
@@ -86,7 +90,7 @@ public class VooService
         }
     }
     //Converte HTML PARA PDF .GERAR FICHAR EM PDF 
-  public byte[]? GerarFichaDoVoo(int id)
+    public byte[]? GerarFichaDoVoo(int id)
     {
         var voo = _context.Voos.Include(v => v.Aeronave)
                                .Include(v => v.Piloto)
@@ -95,20 +99,24 @@ public class VooService
 
         if (voo != null)
         {
-            var builder = new StringBuilder();
-
-            builder.Append($"<h1 style='text-align: center'>Ficha do Voo { voo.Id.ToString().PadLeft(10, '0') }</h1>")
+            var builder = new StringBuilder();  
+            //definir a imagen dentro do projeto na propriedades
+            var path = _hostEnvironment.ContentRootPath + "\\voeairlines.png";
+            //puxar a imagens para a convesão do pdf 
+            builder.Append($"<img src=\"{path}\" with='1000' heigth='494'/>");
+    
+            builder.Append($"<h1 style='text-align: center'>Ficha do Voo {voo.Id.ToString().PadLeft(10, '0')}</h1>")
                    .Append($"<hr>")
-                   .Append($"<p><b>ORIGEM:</b> { voo.Origem} (saída em { voo.DataHoraPartida:dd/MM/yyyy} às { voo.DataHoraPartida:hh:mm})</p>")
-                   .Append($"<p><b>DESTINO:</b> { voo.Destino} (chegada em { voo.DataHoraChegada:dd/MM/yyyy} às { voo.DataHoraChegada:hh:mm})</p>")
+                   .Append($"<p><b>ORIGEM:</b> {voo.Origem} (saída em {voo.DataHoraPartida:dd/MM/yyyy} às {voo.DataHoraPartida:hh:mm})</p>")
+                   .Append($"<p><b>DESTINO:</b> {voo.Destino} (chegada em {voo.DataHoraChegada:dd/MM/yyyy} às {voo.DataHoraChegada:hh:mm})</p>")
                    .Append($"<hr>")
-                   .Append($"<p><b>AERONAVE:</b> { voo.Aeronave!.Codigo } ({ voo.Aeronave.Fabricante } { voo.Aeronave.Modelo })</p>")
+                   .Append($"<p><b>AERONAVE:</b> {voo.Aeronave!.Codigo} ({voo.Aeronave.Fabricante} {voo.Aeronave.Modelo})</p>")
                    .Append($"<hr>")
-                   .Append($"<p><b>PILOTO:</b> { voo.Piloto!.Nome } ({ voo.Piloto.Matricula})</p>")
+                   .Append($"<p><b>PILOTO:</b> {voo.Piloto!.Nome} ({voo.Piloto.Matricula})</p>")
                    .Append($"<hr>");
             if (voo.Cancelamento != null)
             {
-                builder.Append($"<p style='color: red'><b>VOO CANCELADO:</b> { voo.Cancelamento.Motivo }</p>");
+                builder.Append($"<p style='color: red'><b>VOO CANCELADO:</b> {voo.Cancelamento.Motivo}</p>");
             }
 
             var doc = new HtmlToPdfDocument()
